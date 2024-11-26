@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  fastapi-app:
+    build: .
+#    image: 492e2f00caf3 
+    container_name: fastapi-app
+    ports:
+      - "8005:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always

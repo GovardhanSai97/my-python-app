@@ -7,7 +7,7 @@ phases:
   pre_build:
     commands:
       - echo "Preparing for Docker build..."
-      - $(aws ecr get-login --region us-east-1 --no-include-email)
+      - $(aws ecr get-login --region us-east-2 --no-include-email)
   build:
     commands:
       - echo "Building Docker image..."

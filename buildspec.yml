@@ -1,35 +1,19 @@
 version: 0.2
-
-# Environment variables (optional)
-env:
-  variables:
-    APP_ENV: "production"
-
 phases:
   install:
-    runtime-versions:
-      python: 3.9
     commands:
-      - echo Installing dependencies...
+      - echo "Installing dependencies..."
       - pip install -r requirements.txt
-
   pre_build:
     commands:
-      - echo Running pre-build commands...
-      - echo Checking Python version...
-      - python --version
-
+      - echo "Preparing for Docker build..."
+      - $(aws ecr get-login --region us-east-1 --no-include-email)
   build:
     commands:
-      - echo Running build phase...
-      - echo Running tests...
-      - pytest
-
+      - echo "Building Docker image..."
+      - docker build -t my-python-app .
+      - docker tag my-python-app:latest 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
   post_build:
     commands:
-      - echo Build completed on `date`.
-
-artifacts:
-  files:
-    - "**/*"
-  discard-paths: yes
+      - echo "Pushing Docker image..."
+      - docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-python-app:latest

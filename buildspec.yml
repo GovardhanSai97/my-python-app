@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt
+      - pip install -r requirement.txt
   pre_build:
     commands:
       - echo "Preparing for Docker build..."

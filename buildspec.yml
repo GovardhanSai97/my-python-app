@@ -16,4 +16,4 @@ phases:
   post_build:
     commands:
       - echo "Pushing Docker image..."
-      - docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-python-app:latest
+      - docker push 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest

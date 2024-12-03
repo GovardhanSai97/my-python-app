@@ -1,14 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/my-python-app
+  - source: scripts/
+    destination: /home/ec2-user/deployment-scripts
 hooks:
   BeforeInstall:
-    - location: scripts/before_install.sh
+    - location: deployment-scripts/install_dependencies.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: deployment-scripts/start_server.sh
       timeout: 300
       runas: root

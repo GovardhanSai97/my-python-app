@@ -5,7 +5,7 @@ files:
     destination: /home/ec2-user/deployment-scripts
 hooks:
   BeforeInstall:
-    - location: deployment-scripts/install_dependencies.sh
+    - location: deployment-scripts/before_install.sh
       timeout: 300
       runas: root
   ApplicationStart:

@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /docker-compose.yaml
     destination: /home/ubuntu/my-python-app
     permissions:
       - object: /home/ubuntu/my-python-app

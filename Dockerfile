@@ -27,13 +27,13 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY requirements.txt .
-COPY main.py .
+# COPY main.py .
 
 # Install any dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the FastAPI application code into the container
-COPY . /my-python-app
+COPY . /my-python-app/src
 # COPY  /my-python-app .
 VOLUME /app
 

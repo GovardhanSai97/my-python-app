@@ -33,7 +33,7 @@ COPY main.py .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the FastAPI application code into the container
-COPY . /my-python-app
+# COPY . /my-python-app
 COPY  /my-python-app .
 VOLUME /app
 

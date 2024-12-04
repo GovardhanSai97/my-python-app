@@ -14,14 +14,12 @@
 # #       - PYTHONUNBUFFERED=1
 # #     restart: always
 
-version: 3.8'
+version: '3.8'
 services:
   fastapi-app:
     # build: .
     image: 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
     ports:
       - "8010:8010"
-    volumes:
-      - .:/app
     environment:
       - PYTHONUNBUFFERED=1

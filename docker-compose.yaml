@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   fastapi-app:
-    build: 
-        context: .
+    image: 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
     container_name: fastapi-app
     ports:
       - "8000:8000"

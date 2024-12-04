@@ -3,7 +3,7 @@ if [ -d /home/ubuntu/my-python-app ]; then
 fi
 sudo apt-get update
 sudo apt-get install -y python3 python3-pip docker.io docker-compose-plugin
-sudo sytemctl start docker
+sudo systemctl start docker
 if ! [ -x "$(command -v aws)" ]; then
     echo "AWS CLI not installed. Installing now..."
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"

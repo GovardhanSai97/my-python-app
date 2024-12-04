@@ -2,7 +2,7 @@ if [ -d /home/ubuntu/my-python-app ]; then
     rm -rf /home/ubuntu/my-python-app
 fi
 sudo apt-get update
-sudo apt-get install -y python3 python3-pip docker.io docker-compose
+sudo apt-get install -y python3 python3-pip docker.io docker-compose-plugin
 sudo sytemctl start docker
 if ! [ -x "$(command -v aws)" ]; then
     echo "AWS CLI not installed. Installing now..."

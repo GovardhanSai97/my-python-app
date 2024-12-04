@@ -1,13 +1,26 @@
-version: '3.8'
+# version: '3.8'
 
+# # services:
+# #   fastapi-app:
+# #     # # image: 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
+# #     # image: spare
+    
+# #     container_name: fastapi-app
+# #     ports:
+# #       - "8000:8000"
+# #     volumes:
+# #       - .:/app
+# #     environment:
+# #       - PYTHONUNBUFFERED=1
+# #     restart: always
+
+version: 3.8'
 services:
   fastapi-app:
-    image: 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
-    container_name: fastapi-app
+    # build: .
+    image: fast-test
     ports:
-      - "8000:8000"
+      - "8010:8010"
     volumes:
       - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
-    restart: always
+    command: uvicorn main:app --host 0.0.0.0 --port 8010 --reload

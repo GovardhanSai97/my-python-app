@@ -18,7 +18,7 @@ version: 3.8'
 services:
   fastapi-app:
     # build: .
-    image: fast-test
+    image: 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
     ports:
       - "8010:8010"
     volumes:

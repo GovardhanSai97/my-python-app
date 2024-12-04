@@ -2,8 +2,10 @@ if [ -d /home/ubuntu/my-python-app ]; then
     rm -rf /home/ubuntu/my-python-app
 fi
 sudo apt-get update
-sudo apt-get install -y python3 python3-pip docker.io docker-compose-plugin
-sudo systemctl start docker
+# sudo apt-get install -y python3 python3-pip docker.io docker-compose-plugin
+# sudo systemctl start docker
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo service docker start
 if ! [ -x "$(command -v aws)" ]; then
     echo "AWS CLI not installed. Installing now..."
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -16,7 +18,7 @@ else
 fi
 aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 577638362176.dkr.ecr.us-east-2.amazonaws.com
 docker pull 577638362176.dkr.ecr.us-east-2.amazonaws.com/my-python-app:latest
-sudo systemctl enable docker
+sudo service enable docker
 # if [ -d /home/ubuntu/my-python-app ]; then
 #     rm -rf /home/ubuntu/my-python-app
 # fi
